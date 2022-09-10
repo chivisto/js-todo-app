@@ -5,7 +5,7 @@ html {
 }
 
 .main {
-    width: 16rem;
+    width: 25.5rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -16,3 +16,60 @@ h1 {
     text-align: center;
     color: #fff;
 }
+
+form{
+    background-color: #fff;
+    padding: 15px;
+  }
+  input[type="text"]{
+    width: 310px;
+    height: 30px;
+    outline: 0;
+    border: none;
+    font-size: 1.5em;
+    background: #fff;
+    color: #2f4f4f;
+  }
+  button{
+    font-size: 1.5em;
+    color: #53ffdf;
+    background-color: #fff;
+    outline: 0;
+    border: none;
+    width: 50px;
+    border: 2px solid #53ffdf;
+    border-radius: 5px;
+  }
+
+  .tasksBoard{
+    background-color: #fff;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    /*display: none;*/
+  
+  }
+  ul{
+    list-style: none;
+  }
+  li{
+    border-bottom: 1px solid #2B2B2B;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 1.3em;
+    color: #2f4f4f;
+  }
+  a{
+    float: right;
+    text-align: right;
+    color: #ff6161;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  .delete{
+    background-color: #ff6161;
+    padding: 0px 3px 0px 3px;
+    color: #fff;
+    cursor: pointer;
+  }
