@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Todo List Isaac</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <div class="main">
-      <h1>Todo List</h1>
-      <form class="" action="index.html" method="post">
-        <input type="text" placeholder="new task" name="task">
-        <button  type="submit"><strong>+</strong></button>
-      </form>
-      <div class="tasksBoard">
+</head>
 
-        <a id="clear">Clear</a>
-      </div>
+<body>
+    <div class="main">
+        <h1>Todo List</h1>
+        <form class="" action="index.html" method="post">
+            <input type="text" placeholder="new task" name="task">
+            <button type="submit"><strong>+</strong></button>
+        </form>
+        <div class="tasksBoard">
+            <ul>
+                <li><span class="delete">×</span><input type="checkbox"><label></label></li>
+                <li><span class="delete">×</span><input type="checkbox"><label></label></li>
+                <li><span class="delete">×</span><input type="checkbox"><label></label></li>
+                <li><span class="delete">×</span><input type="checkbox"><label></label></li>
+            </ul>
+            <a id="clear">Clear</a>
+        </div>
     </div>
     <script type="text/javascript" src="app.js"></script>
-  </body>
-  
+</body>
+
 </html>
