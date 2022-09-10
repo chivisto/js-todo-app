@@ -81,4 +81,11 @@ a {
     color: #820707;
     cursor: pointer;
     border: 2px solid #820707;
+    font-size: 12px;
+}
+
+.tasksLeft{
+    color: #820707;
+    margin-left: 2.5rem;
+    font-weight: bolder;
 }
