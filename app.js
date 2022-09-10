@@ -3,7 +3,9 @@ const loadEvents = () =>{
     //submit list
     document.querySelector('form').addEventListener('submit', submit);
     //clear list
-    document.getElementById('clear').addEventListener('click',clearList);
+    document.getElementById('clear').addEventListener('click', clearList);
+    //clear check
+    document.querySelector('ul').addEventListener('click', deleteCheck);
 }
 
 const submit = (e) => {
@@ -21,6 +23,15 @@ const addTask = (task) =>{
     li.innerHTML = `<span class="delete">×</span><input type="checkbox"><label>${task}</label>`;
     ul.appendChild(li);
     document.querySelector('.tasksBoard').style.display = 'block';
+}
+
+// deleteCheck
+const deleteCheck = (e) => {
+    if(e.target.className == 'delete')
+      deleteTask(e);
+    else {
+      tickTask(e);
+    }
 }
 
 //clear list function
