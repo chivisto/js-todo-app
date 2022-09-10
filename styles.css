@@ -1,6 +1,6 @@
 html {
     height: 100vh;
-    background-color: #2B2B2B ;
+    background-color: #2B2B2B;
     color: #F8F0E3;
 }
 
@@ -17,11 +17,12 @@ h1 {
     color: #fff;
 }
 
-form{
+form {
     background-color: #fff;
     padding: 15px;
-  }
-  input[type="text"]{
+}
+
+input[type="text"] {
     width: 310px;
     height: 30px;
     outline: 0;
@@ -29,8 +30,9 @@ form{
     font-size: 1.5em;
     background: #fff;
     color: #2f4f4f;
-  }
-  button{
+}
+
+button {
     font-size: 1.5em;
     color: #53ffdf;
     background-color: #fff;
@@ -39,37 +41,44 @@ form{
     width: 50px;
     border: 2px solid #53ffdf;
     border-radius: 5px;
-  }
+}
 
-  .tasksBoard{
+.tasksBoard {
     background-color: #fff;
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 40px;
     display: none;
-  
-  }
-  ul{
+
+}
+
+ul {
     list-style: none;
-  }
-  li{
+}
+
+li {
     border-bottom: 1px solid #2B2B2B;
     padding-bottom: 15px;
     padding-top: 15px;
     font-size: 1.3em;
     color: #2f4f4f;
-  }
-  a{
-    float: right;
-    text-align: right;
-    color: #ff6161;
-    font-size: 1.2em;
+}
+
+a {
+    float: left;
+    text-align: left;
+    color: #820707;
+    font-weight: bolder;
     cursor: pointer;
-  }
-  .delete{
-    background-color: #ff6161;
+    border: 2px solid #820707;
+    margin-left: 2.5rem;
+    padding: 3px;
+}
+
+.delete {
+    background-color: #820707;
     padding: 0px 3px 0px 3px;
     color: #fff;
     cursor: pointer;
-  }
+}

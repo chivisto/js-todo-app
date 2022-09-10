@@ -20,7 +20,7 @@ const submit = (e) => {
 const addTask = (task) => {
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-    li.innerHTML = `<span class="delete">×</span><input type="checkbox"><label>${task}</label>`;
+    li.innerHTML = `<input type="checkbox"><label>${task}</label><br><span class="delete">delete</span>`;
     ul.appendChild(li);
     document.querySelector('.tasksBoard').style.display = 'block';
 }
@@ -37,7 +37,7 @@ const deleteCheck = (e) => {
 // tick a task
 const tickTask = (e) => {
     const task = e.target.nextSibling;
-    
+
     if (e.target.checked) {
         task.style.textDecoration = "line-through";
         task.style.color = "#ff0000";
@@ -52,31 +52,4 @@ const clearList = (e) => {
     let ul = document.querySelector('ul').innerHTML = '';
 }
 
-
-
-
-
-
-
-
 loadEvents();
-
-
-// function addTask(task) {
-//     let ul = document.querySelector('ul');
-//     let li = document.createElement('li');
-//     li.innerHTML = `<span class="delete">×</span><input type="checkbox"><label>${task}</label>`;
-//     ul.appendChild(li);
-//     document.querySelector('.tasksBoard').style.display = 'block';
-// }
-
-
-// subit data function
-// function submit1(e) {
-//     e.preventDefault();
-//     let input = document.querySelector('input');
-//     if (input.value != '')
-//         addTask(input.value);
-//     input.value = '';
-// }
-
