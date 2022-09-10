@@ -1,3 +1,11 @@
+//loader
+const loadEvents = () =>{
+    //submit list
+    document.querySelector('form').addEventListener('submit', submit);
+    //clear list
+    document.getElementById('clear').addEventListener('click',clearList);
+}
+
 const submit = (e) => {
     e.preventDefault();
     let input = document.querySelector('input');
@@ -16,10 +24,6 @@ const addTask = (task) =>{
 }
 
 loadEvents();
-// load every event in the page
-function loadEvents() {
-    document.querySelector('form').addEventListener('submit', submit);
-}
 
 
 // function addTask(task) {
