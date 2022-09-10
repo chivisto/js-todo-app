@@ -1,5 +1,5 @@
 //loader
-const loadEvents = () =>{
+const loadEvents = () => {
     //submit list
     document.querySelector('form').addEventListener('submit', submit);
     //clear list
@@ -17,7 +17,7 @@ const submit = (e) => {
 }
 
 // add tasks
-const addTask = (task) =>{
+const addTask = (task) => {
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
     li.innerHTML = `<span class="delete">×</span><input type="checkbox"><label>${task}</label>`;
@@ -27,15 +27,28 @@ const addTask = (task) =>{
 
 // deleteCheck
 const deleteCheck = (e) => {
-    if(e.target.className == 'delete')
-      deleteTask(e);
+    if (e.target.className == 'delete')
+        deleteTask(e);
     else {
-      tickTask(e);
+        tickTask(e);
+    }
+}
+
+// tick a task
+const tickTask = (e) => {
+    const task = e.target.nextSibling;
+    
+    if (e.target.checked) {
+        task.style.textDecoration = "line-through";
+        task.style.color = "#ff0000";
+    } else {
+        task.style.textDecoration = "none";
+        task.style.color = "#2f4f4f";
     }
 }
 
 //clear list function
-const clearList = (e) =>{
+const clearList = (e) => {
     let ul = document.querySelector('ul').innerHTML = '';
 }
 
