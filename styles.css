@@ -77,8 +77,8 @@ a {
 }
 
 .delete {
-    background-color: #820707;
     padding: 0px 3px 0px 3px;
-    color: #fff;
+    color: #820707;
     cursor: pointer;
+    border: 2px solid #820707;
 }
