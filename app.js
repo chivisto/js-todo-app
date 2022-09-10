@@ -23,6 +23,18 @@ const addTask = (task) =>{
     document.querySelector('.tasksBoard').style.display = 'block';
 }
 
+//clear list function
+const clearList = (e) =>{
+    let ul = document.querySelector('ul').innerHTML = '';
+}
+
+
+
+
+
+
+
+
 loadEvents();
 
 
