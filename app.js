@@ -1,13 +1,11 @@
-//loader
-const loadEvents = () => {
-    //submit list
+// load every event in the page
+const loadEvents = () =>{
     document.querySelector('form').addEventListener('submit', submit);
-    //clear list
     document.getElementById('clear').addEventListener('click', clearList);
-    //clear check
-    document.querySelector('ul').addEventListener('click', deleteCheck);
+    document.querySelector('ul').addEventListener('click', deleteOrTick);
 }
 
+// subit data function
 const submit = (e) => {
     e.preventDefault();
     let input = document.querySelector('input');
@@ -17,16 +15,21 @@ const submit = (e) => {
 }
 
 // add tasks
-const addTask = (task) => {
+const addTask = (task) =>{
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-    li.innerHTML = `<input type="checkbox"><label>${task}</label><br><span class="delete">delete</span>`;
+    li.innerHTML = `<input type="checkbox"><label>${task}</label><br><span class="delete">Delete</span>`;
     ul.appendChild(li);
     document.querySelector('.tasksBoard').style.display = 'block';
 }
 
-// deleteCheck
-const deleteCheck = (e) => {
+//clear list
+const clearList = (e) => {
+    let ul = document.querySelector('ul').innerHTML = '';
+}
+
+// deleteTick
+const deleteOrTick = (e) => {
     if (e.target.className == 'delete')
         deleteTask(e);
     else {
@@ -34,10 +37,16 @@ const deleteCheck = (e) => {
     }
 }
 
+// delete task
+const deleteTask = (e) => {
+    let remove = e.target.parentNode;
+    let parentNode = remove.parentNode;
+    parentNode.removeChild(remove);
+}
+
 // tick a task
 const tickTask = (e) => {
     const task = e.target.nextSibling;
-
     if (e.target.checked) {
         task.style.textDecoration = "line-through";
         task.style.color = "#ff0000";
@@ -45,11 +54,6 @@ const tickTask = (e) => {
         task.style.textDecoration = "none";
         task.style.color = "#2f4f4f";
     }
-}
-
-//clear list function
-const clearList = (e) => {
-    let ul = document.querySelector('ul').innerHTML = '';
 }
 
 loadEvents();
