@@ -1,0 +1,18 @@
+html {
+    height: 100vh;
+    background-color: #2B2B2B ;
+    color: #F8F0E3;
+}
+
+.main {
+    width: 16rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
