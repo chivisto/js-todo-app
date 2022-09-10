@@ -14,18 +14,41 @@ const submit = (e) => {
     input.value = '';
 }
 
+let taskArray = [];
 // add tasks
 const addTask = (task) =>{
+    let p = document.querySelector('p');
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
     li.innerHTML = `<input type="checkbox"><label>${task}</label><br><span class="delete">Delete</span>`;
     ul.appendChild(li);
     document.querySelector('.tasksBoard').style.display = 'block';
+
+    taskArray.push(task);
+    const tasksLeft = taskArray.length;
+    p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
 }
 
 //clear list
 const clearList = (e) => {
+    let p = document.querySelector('p');
     let ul = document.querySelector('ul').innerHTML = '';
+    taskArray = []
+
+    const tasksLeft = taskArray.length;
+    p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
+}
+
+// delete task
+const deleteTask = (e) => {
+    let p = document.querySelector('p');
+    let remove = e.target.parentNode;
+    let parentNode = remove.parentNode;
+    parentNode.removeChild(remove);
+
+    taskArray.pop();
+    const tasksLeft = taskArray.length;
+    p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
 }
 
 // deleteTick
@@ -37,23 +60,27 @@ const deleteOrTick = (e) => {
     }
 }
 
-// delete task
-const deleteTask = (e) => {
-    let remove = e.target.parentNode;
-    let parentNode = remove.parentNode;
-    parentNode.removeChild(remove);
-}
-
-// tick a task
+// check a task
 const tickTask = (e) => {
     const task = e.target.nextSibling;
     if (e.target.checked) {
         task.style.textDecoration = "line-through";
         task.style.color = "#ff0000";
+
+        let p = document.querySelector('p');
+        taskArray.pop();
+        const tasksLeft = taskArray.length;
+        p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
     } else {
         task.style.textDecoration = "none";
         task.style.color = "#2f4f4f";
+
+        let p = document.querySelector('p');
+        taskArray.push(task);
+        const tasksLeft = taskArray.length;
+        p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
     }
+    
 }
 
 loadEvents();
