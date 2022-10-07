@@ -1,5 +1,5 @@
 // load every event in the page
-const loadEvents = () =>{
+const loadEvents = () => {
     document.querySelector('form').addEventListener('submit', submit);
     document.getElementById('clear').addEventListener('click', clearList);
     document.querySelector('ul').addEventListener('click', deleteOrTick);
@@ -16,11 +16,11 @@ const submit = (e) => {
 
 let taskArray = [];
 // add tasks
-const addTask = (task) =>{
+const addTask = (task) => {
     let p = document.querySelector('p');
     let ul = document.querySelector('ul');
     let li = document.createElement('li');
-    li.innerHTML = `<input type="checkbox"><label>${task}</label><br><span class="delete">Delete</span>`;
+    li.innerHTML = `<input type="checkbox"><label><span id="edit">${task}</span></label><br><span class="delete">Delete</span>`;
     ul.appendChild(li);
     document.querySelector('.tasksBoard').style.display = 'block';
 
@@ -28,6 +28,19 @@ const addTask = (task) =>{
     const tasksLeft = taskArray.length;
     p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
 }
+
+//edit tasks
+const editTask = () => {
+    document.getElementById('edit').onclick = function () {
+        document.body.removeChild(this);
+        let input = document.createElement('input');
+        input.id = 'edit';
+        input.value = this.innerHTML;
+        document.body.appendChild(input);
+        input.select();
+        console.log('am i here?')
+    }
+} 
 
 //clear list
 const clearList = (e) => {
@@ -80,7 +93,7 @@ const tickTask = (e) => {
         const tasksLeft = taskArray.length;
         p.innerHTML = `<span class="tasksLeft">Tasks left: ${tasksLeft}</span>`;
     }
-    
+
 }
 
 loadEvents();
